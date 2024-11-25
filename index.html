@@ -9,22 +9,16 @@
     <h1>Encuesta de Satisfacción</h1>
     <form action="http://localhost:3000/api/submit-survey" method="POST">
         <label for="question1">¿Qué opina de nuestro producto?</label><br>
-        <input type="radio" id="excelente" name="question1" value="Excelente">
+        <input type="radio" id="excelente" name="question" value="Excelente">
         <label for="excelente">Excelente</label><br>
-        <input type="radio" id="bueno" name="question1" value="Bueno">
+        <input type="radio" id="bueno" name="question" value="Bueno">
         <label for="bueno">Bueno</label><br>
-        <input type="radio" id="regular" name="question1" value="Regular">
+        <input type="radio" id="regular" name="question" value="Regular">
         <label for="regular">Regular</label><br>
-        <input type="radio" id="malo" name="question1" value="Malo">
+        <input type="radio" id="malo" name="question" value="Malo">
         <label for="malo">Malo</label><br><br>
 
-        <label for="question2">¿Recomendaría nuestro servicio?</label><br>
-        <input type="radio" id="si" name="question2" value="Sí">
-        <label for="si">Sí</label><br>
-        <input type="radio" id="no" name="question2" value="No">
-        <label for="no">No</label><br><br>
-
-        <button type="submit">Enviar Respuestas</button>
+        <button type="submit">Enviar Respuesta</button>
     </form>
 </body>
 </html>
