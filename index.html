@@ -10,16 +10,21 @@
             const edad = document.getElementById('edad').value;
             const opinion = document.getElementById('opinion').value;
 
-            const respuesta = await fetch('http://localhost:3000/api/survey', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nombre, edad, opinion })
-            });
+            try {
+                const respuesta = await fetch('http://127.0.0.1:3000/api/survey', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, edad, opinion })
+                });
 
-            if (respuesta.ok) {
-                alert('¡Encuesta enviada exitosamente!');
-            } else {
-                alert('Error al enviar la encuesta.');
+                if (respuesta.ok) {
+                    alert('¡Encuesta enviada exitosamente!');
+                } else {
+                    const error = await respuesta.json();
+                    alert('Error: ' + error.message);
+                }
+            } catch (err) {
+                alert('Error conectando al servidor: ' + err.message);
             }
         }
     </script>
